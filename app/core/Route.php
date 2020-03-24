@@ -30,16 +30,33 @@ class Route{
 
         $controller_path = $controller.".php";
         $model_path = $model.".php";
+   
+  
+        if(file_exists($model_path)){
+            $this->model = new $model;
+        }
 
-       
- 
         if(file_exists($controller_path)){
             $controller = new $controller;
         }else{
-            header();
+           // Route::ErrorPage404();
+        }
+
+        if(method_exists($controller , $action)){
+            $controller->$action();
+        }else{
+           // Route::ErrorPage404();
         }
 
 
+    }
+
+    function ErrorPage404()
+	{
+        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
+        header('HTTP/1.1 404 Not Found');
+		header("Status: 404 Not Found");
+		header('Location:'.$host.'404');
     }
 
 }

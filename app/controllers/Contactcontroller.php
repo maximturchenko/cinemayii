@@ -6,8 +6,10 @@ use app\core\Controller;
 
 class Contactcontroller extends Controller{
  
-    public function __construct(){
-        echo "Our Contact soon wiil ready";
+
+    public function showaction(){
+        $content_view = "main_template.php";
+        $this->view->generate($content_view , $this->template_view);
     }
 
 }
