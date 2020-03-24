@@ -7,6 +7,9 @@ use app\core\Route;
 
 
 session_start();
+  
+
+
  
 $router = new Route();
 $router->run();

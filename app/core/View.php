@@ -3,7 +3,7 @@
 namespace app\core;
 
 class View {
-	public function generate($title='Главная', $content_view, $template_view, $data = null)
+	public function generate($content_view, $template_view, $data = null)
 	{   
 		ob_start();
 		require 'app/views/'.$content_view;
