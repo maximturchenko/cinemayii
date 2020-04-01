@@ -8,9 +8,7 @@ use yii\data\ActiveDataProvider;
 $this->title = 'Кинотеатр';
 ?>
 <div class="site-index">
-
-     <?php //var_dump($movies); ?>  
-
+  
     <div class="jumbotron">
         <h1>Самые свежие новинки кино!</h1>  
     </div>
